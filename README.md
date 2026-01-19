@@ -13,7 +13,7 @@
 ### 1. Prerequisites
 **InsightFlow** requires two tools to be installed on your system:
 
-1.  **Python 3.10+**
+1.  **Python 3.11+**
 2.  **FFmpeg** (Core engine for audio processing)
     *   **Windows:** Open Terminal and run: `winget install Gyan.FFmpeg`
     *   **macOS:** `brew install ffmpeg`

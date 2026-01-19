@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Stanislaus", email = "flysirin@gmail.com" }
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "google-genai==1.59.0",
     "python-dotenv==1.2.1",
