@@ -1,0 +1,19 @@
+[project]
+name = "insightflow"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Stanislaus", email = "flysirin@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai==1.59.0",
+    "pydantic-settings==2.12.0",
+    "pyyaml>=6.0.3",
+    "yt-dlp>=2025.12.8",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.25,<0.10.0"]
+build-backend = "uv_build"

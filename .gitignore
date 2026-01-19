@@ -1,0 +1,29 @@
+# Standard Python/UV patterns
+.venv/
+.python-version
+__pycache__/
+*.py[cod]
+*$py.class
+
+# InsightFlow Specific Data (Privacy)
+data/
+input/
+output/
+.env
+./env
+# Distribution / Build
+dist/
+build/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.bak
+GEMINI.md
+/docs/
+
+# Logs
+logs/
+*.log
