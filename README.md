@@ -1,6 +1,20 @@
+<div align="center">
+
 # InsightFlow 🧠
 
+**Zero Friction Knowledge Ingestion**
+
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](https://github.com/flysirin/InsightFlow)
+[![Python](https://img.shields.io/badge/python-3.11+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![AI](https://img.shields.io/badge/AI-Gemini_2.0-8E75B2.svg?logo=google-gemini&logoColor=white)](https://aistudio.google.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Code Style](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 **InsightFlow** is a local-first tool that turns your media consumption into structured knowledge. It automatically processes videos and audio files using Google Gemini AI to generate summaries, transcripts, and action items.
+
+</div>
+
+---
 
 ## ✨ Features
 *   **Inbox-Centric:** Just drop files into your folder.
