@@ -27,7 +27,7 @@
 **Option A: Using UV (Recommended)**
 ```bash
 # Clone the repository
-git clone https://github.com/your/repo/InsightFlow.git
+git clone https://github.com/flysirin/InsightFlow.git
 cd InsightFlow
 
 # Install Python dependencies
@@ -37,7 +37,7 @@ uv sync
 **Option B: Using Standard Pip**
 ```bash
 # Clone the repository
-git clone https://github.com/your/repo/InsightFlow.git
+git clone https://github.com/flysirin/InsightFlow.git
 cd InsightFlow
 
 # Create a virtual environment (Optional but recommended)
@@ -52,11 +52,22 @@ pip install -r requirements.txt
 ```
 
 ### 3. Configuration
-Create a `.env` file (copy from `.env.example`) and add your Google AI Studio keys:
-```ini
-GOOGLE_KEYS_FREE=key1,key2
-GOOGLE_KEYS_PAID=paid_key
+Copy the template to create your environment file:
+```bash
+cp .env.example .env
 ```
+Edit `.env` with your settings:
+
+| Variable | Description | Default |
+| :--- | :--- | :--- |
+| `GOOGLE_KEYS_FREE` | List of Free Tier API keys (comma-separated) | Required |
+| `GOOGLE_KEYS_PAID` | List of Paid Tier API keys (comma-separated) | Optional |
+| `GOOGLE_MODEL` | Gemini model to use (e.g., `gemini-2.0-flash`) | `gemini-2.0-flash-lite` |
+| `INSIGHTFLOW_INBOX` | Folder to watch for new files | `~/Downloads/InsightFlowInbox` |
+| `INSIGHTFLOW_AUDIO_BITRATE` | Audio quality for processing (e.g., `64k`, `128k`) | `64k` |
+| `INSIGHTFLOW_AUDIO_CHANNELS` | Audio channels (1 for Mono, 2 for Stereo) | `1` |
+
+> **Note:** For Windows users, ensure `INSIGHTFLOW_INBOX` uses a full path like `C:\Users\Name\Downloads\InsightFlowInbox`.
 
 ### 4. Usage
 
