@@ -4,6 +4,7 @@ import tempfile
 from pathlib import Path
 import subprocess
 from typing import List, Optional, Tuple
+from insightflow.core.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -68,7 +69,8 @@ class LocalIngestor:
             "-i", str(video_path),
             "-vn",              # No video
             "-acodec", "libmp3lame",
-            "-q:a", "4",        # VBR quality 4 (good balance)
+            "-b:a", settings.AUDIO_BITRATE,
+            "-ac", str(settings.AUDIO_CHANNELS),
             "-y",               # Overwrite
             str(temp_audio_path)
         ]

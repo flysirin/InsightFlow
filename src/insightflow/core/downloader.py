@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 from typing import Optional
 import yt_dlp
+from insightflow.core.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -33,13 +34,18 @@ class YTDownloader:
         # Configuration mostly matching 'headless.py' logic
         # We use a hook to get the final filename
         ydl_opts = {
-            'format': 'bestaudio/best',
+            'format': 'bestaudio[abr<=128]/bestaudio',  # Smart selection: Prefer <=128kbps (Voice optimized)
             'outtmpl': str(output_dir / '%(title)s.%(ext)s'),
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
-                'preferredquality': '192',
+                # preferredquality is often just a hint to yt-dlp, real work done in args below
+                'preferredquality': settings.AUDIO_BITRATE.replace("k", ""), 
             }],
+            'postprocessor_args': [
+                '-ac', str(settings.AUDIO_CHANNELS),
+                '-b:a', settings.AUDIO_BITRATE
+            ],
             'logger': logger,
             'quiet': True,
             'no_warnings': True,

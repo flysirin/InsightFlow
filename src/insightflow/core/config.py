@@ -35,14 +35,15 @@ class Settings:
         # OUTPUT now defaults to INBOX to keep everything together.
         self.INSIGHTFLOW_OUTPUT = self.INSIGHTFLOW_INBOX
         
-        # Legacy/Optional paths
-        self.INSIGHTFLOW_INPUT = Path(os.getenv("INSIGHTFLOW_INPUT", "input"))
-
         # --- Logging ---
         self.LOG_DIR = Path(os.getenv("INSIGHTFLOW_LOG_DIR", "logs"))
         self.LOG_FILE = self.LOG_DIR / "insightflow.log"
         self.LOG_MAX_BYTES = int(os.getenv("LOG_MAX_BYTES", 512 * 1024))  # 0.5 MB
         self.LOG_BACKUP_COUNT = int(os.getenv("LOG_BACKUP_COUNT", 3))
+
+        # --- Audio Processing ---
+        self.AUDIO_BITRATE = os.getenv("INSIGHTFLOW_AUDIO_BITRATE", "64k")
+        self.AUDIO_CHANNELS = os.getenv("INSIGHTFLOW_AUDIO_CHANNELS", "1")  # 1=Mono, 2=Stereo
 
 # Create the singleton instance
 settings = Settings()

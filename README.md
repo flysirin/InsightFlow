@@ -4,20 +4,27 @@
 
 ## ✨ Features
 *   **Inbox-Centric:** Just drop files into your folder.
-*   **Smart Analysis:** Uses Gemini 1.5/2.0 Flash for ultra-fast, cheap processing.
+*   **Smart Analysis:** Uses Gemini 2.0 Flash for ultra-fast, cheap processing.
 *   **Multi-Key Engine:** Automatically rotates between Free and Paid API keys to save costs.
 *   **Hybrid Input:** Supports local files (MP3, MP4, MOV) and YouTube URLs.
 
 ## 🚀 Quick Start
 
 ### 1. Prerequisites
-*   **Python 3.10+**
-*   **FFmpeg**: Must be installed and available in your system PATH (required for audio processing).
-    *   *Windows:* `winget install Gyan.FFmpeg` or download from [ffmpeg.org](https://ffmpeg.org).
-    *   *Mac:* `brew install ffmpeg`
-    *   *Linux:* `sudo apt install ffmpeg`
+**InsightFlow** requires two tools to be installed on your system:
+
+1.  **Python 3.10+**
+2.  **FFmpeg** (Core engine for audio processing)
+    *   **Windows:** Open Terminal and run: `winget install Gyan.FFmpeg`
+    *   **macOS:** `brew install ffmpeg`
+    *   **Linux:** `sudo apt install ffmpeg`
+    *   *Manual:* Download from [ffmpeg.org](https://ffmpeg.org) and add to PATH.
+
+    > **Verify Setup:** Open a terminal and run `ffmpeg -version`. If you see version info, you're good to go!
 
 ### 2. Installation
+
+**Option A: Using UV (Recommended)**
 ```bash
 # Clone the repository
 git clone https://github.com/your/repo/InsightFlow.git
@@ -25,6 +32,23 @@ cd InsightFlow
 
 # Install Python dependencies
 uv sync
+```
+
+**Option B: Using Standard Pip**
+```bash
+# Clone the repository
+git clone https://github.com/your/repo/InsightFlow.git
+cd InsightFlow
+
+# Create a virtual environment (Optional but recommended)
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# Mac/Linux:
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
 ### 3. Configuration
